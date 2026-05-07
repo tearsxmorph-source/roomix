@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+@source "../public";
+
+@layer base {
+  body {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .video-tile {
+    @apply relative overflow-hidden rounded-lg shadow-sm;
+    aspect-ratio: 16 / 10;
+    background: var(--color-base-300);
+  }
+
+  .video-tile video {
+    @apply h-full w-full object-cover;
+  }
+
+  .video-name {
+    @apply absolute bottom-2 left-2 rounded px-2 py-1 text-xs font-medium;
+    background: var(--color-neutral);
+    color: var(--color-neutral-content);
+  }
+}
